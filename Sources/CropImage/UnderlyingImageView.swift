@@ -73,7 +73,6 @@ struct UnderlyingImageView: View {
             if scrolling {
                 scale = clampedScale
                 offset = clampedOffset
-                scrolling = false
             } else {
                 withAnimation(.interactiveSpring()) {
                     scale = clampedScale
@@ -81,6 +80,7 @@ struct UnderlyingImageView: View {
                 }
             }
         }
+        scrolling = false
     }
 
     func setInitialScale(basedOn viewSize: CGSize) {
